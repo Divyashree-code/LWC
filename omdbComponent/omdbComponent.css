@@ -1,0 +1,11 @@
+.img-style{
+    float : left;
+}
+.flex-display{
+    display:flex;
+    padding-bottom: 5em;
+}
+.align-text{
+    padding-top:10%;
+    padding-left:2%;
+}

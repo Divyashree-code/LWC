@@ -1,0 +1,26 @@
+<template>
+    
+    <div class="slds-p-around_medium lgc-bg">
+        <lightning-input type="text" label="Movie Search" placeholder="type Movie Name here..."></lightning-input>
+    </div>
+    <div>
+        <lightning-button variant="brand" label="Search" title="Primary action" onclick={fetchMovieName} class="slds-m-left_x-small"></lightning-button>
+    </div>
+
+    <template if:true={error}>
+        No Movies Found
+    </template>
+
+    <template if:false={error}>
+    <template for:each={data} for:item="dat">
+        <div key={dat.imdbID} class="flex-display">
+        <img key={dat.imdbID} src ={dat.Poster} class="img-style">
+        <div key={dat.imdbID} class="align-text">
+            <div>      Name      : {dat.Title}</div>
+            <div>Year of Release : {dat.Year}</div>
+        </div>
+        </div>
+    </template>
+    </template>
+
+    </template>
